@@ -32,4 +32,13 @@ public class HelperBase {
             return false;
         }
     }
+
+    protected boolean isElementPresent(By locator) {
+        try {
+            wd.findElement(locator);
+            return true;
+        } catch (NoAlertPresentException ex) {
+            return false;
+        }
+    }
 }
