@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import sun.plugin2.util.BrowserType;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
@@ -26,11 +27,11 @@ public class ApplicationManager {
     }
 
     public void init() {
-        if (browser == org.openqa.selenium.remote.BrowserType.FIREFOX){
+        if (Objects.equals(browser, org.openqa.selenium.remote.BrowserType.FIREFOX)){
             wd = new FirefoxDriver();
-        }else if (browser == org.openqa.selenium.remote.BrowserType.CHROME){
+        }else if (Objects.equals(browser, org.openqa.selenium.remote.BrowserType.CHROME)){
             wd = new ChromeDriver();
-    }else if (browser == org.openqa.selenium.remote.BrowserType.IE){
+    }else if (Objects.equals(browser, org.openqa.selenium.remote.BrowserType.IE)){
             wd = new InternetExplorerDriver();
         }
 
